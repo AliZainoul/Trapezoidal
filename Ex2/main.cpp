@@ -15,14 +15,12 @@ double Cube(double x){return x*x*x;};
 
 int main ()
 {
-  unsigned int n=0;
-  double h=0.0;
-  double x_0=0.0;
+  int n=0;
   double integral=0.0;
   double a=0.0;
   double b=0.0;
 
-  cout << "Entrez la borne inf a : \n ";
+  cout << "Entrez la borne inf a : \n";
   cin >> a;
   cout << "Entrez la borne sup b :  \n";
   cin >> b;
@@ -31,13 +29,14 @@ int main ()
 
   Definite_integral iff = Definite_integral(a, b, Square);
   integral = iff.trapezoidal(n);
-  cout << "Function integrated over " << a << "to " << b << " is : " << integral <<"\n";
+  cout << "Function integrated from " << a << " to " << b << " is : " << integral <<"\n";
+
 
   iff = Definite_integral(a, b, Cube);
   integral = iff.trapezoidal(n);
-  cout << "Function integrated over " << a << "to " << b << " is : " << integral <<"\n";
+  cout << "Function integrated from " << a << " to " << b << " is : " << integral <<"\n";
 
   iff = Definite_integral(a, b, sqrt);
   integral = iff.trapezoidal(n);
-  cout << "Function integrated over " << a << "to " << b << " is : " << integral <<"\n";
+  cout << "Function integrated from " << a << " to " << b << " is : " << integral <<"\n";
 }

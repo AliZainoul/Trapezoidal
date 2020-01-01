@@ -17,7 +17,7 @@ using namespace std;
 Vector::Vector(int i, double v){
 	M_data = new double[i];
 	M_size = i;
-	cout << "Constructeur 2: allocation du vecteur: "<<M_data<<"\n";
+	// cout << "Constructeur 2: allocation du vecteur: "<<M_data<<"\n";
     for(int k=0;k<M_size;++k){
 			M_data[k]=v;
 		}
@@ -26,21 +26,21 @@ Vector::Vector(int i, double v){
 Vector::Vector(initializer_list<double> lst){
 	M_data = new double[lst.size()];
 	M_size = static_cast<int>(lst.size());
-	cout << "Constructeur 3: allocation du vecteur: "<<M_data<<"\n";
+	// cout << "Constructeur 3: allocation du vecteur: "<<M_data<<"\n";
  	std::copy(lst.begin(), lst.end(), M_data);
 }
 //  Constructor 4 : Copy Constructor - Example :
 Vector::Vector(Vector const &v){
 	v.M_size==0? M_data = nullptr : M_data = new double[v.M_size];
 	M_size = v.M_size;
-	cout << "Copy constructor: allocation du vecteur: "<<M_data<<" de taille "<<M_size<<"\n";
+	// cout << "Copy constructor: allocation du vecteur: "<<M_data<<" de taille "<<M_size<<"\n";
 	for (int k=0;k<M_size;++k) M_data[k] = v.M_data[k];
 }
 // Constructor 5 : Move Constructor - Example:
 Vector::Vector(Vector&& v){
 	M_data=v.M_data;
 	M_size=v.M_size;
-	cout << "Move du vecteur"<<v.M_data<<" via move constructeur"<<"\n";
+	// cout << "Move du vecteur"<<v.M_data<<" via move constructeur"<<"\n";
 	v.M_size = 0;
 	v.M_data = nullptr;
 }
@@ -50,14 +50,14 @@ Vector& Vector::operator=(Vector const &v){
   if (this != &v){
 	  delete[] M_data;
 	  M_data = new double[M_size=v.M_size];
-	  cout << "Assign du vecteur: "<<v.M_data<<"\n";
+	  // cout << "Assign du vecteur: "<<v.M_data<<"\n";
 	  for(int k=0;k<M_size;++k) M_data[k]=v.M_data[k];
   }
   return *this;
 }
 // Constructor 6 - Move Assignment Operator - Usage:
 Vector& Vector::operator=(Vector&& v){
-	cout << "Move du vecteur"<<v.M_data<<" via move assignment"<<"\n";
+	// cout << "Move du vecteur"<<v.M_data<<" via move assignment"<<"\n";
 	delete[] M_data;
 	M_data = v.M_data;
 	M_size = v.M_size;
@@ -67,7 +67,7 @@ Vector& Vector::operator=(Vector&& v){
 }
 // Destructor
 Vector::~Vector(){
-	cout << "Destruction du vecteur: "<<M_data<<"\n";
+	//cout << "Destruction du vecteur: "<<M_data<<"\n";
 	delete[] M_data;
 }
 
