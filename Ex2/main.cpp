@@ -28,15 +28,17 @@ int main ()
   cin >> n;
 
   Definite_integral iff = Definite_integral(a, b, Square);
+  cout << "**** **** **** ****" << endl;
   integral = iff.trapezoidal(n);
-  cout << "Function integrated from " << a << " to " << b << " is : " << integral <<"\n";
-
-
+  cout << "Function Square integrated from " << a << " to " << b << " is : " << integral <<"\n";
+  cout << "**** **** **** ****" << endl;
   iff = Definite_integral(a, b, Cube);
   integral = iff.trapezoidal(n);
-  cout << "Function integrated from " << a << " to " << b << " is : " << integral <<"\n";
-
+  cout << "Function Cube integrated from " << a << " to " << b << " is : " << integral <<"\n";
+  cout << "**** **** **** ****" << endl;
   iff = Definite_integral(a, b, sqrt);
   integral = iff.trapezoidal(n);
-  cout << "Function integrated from " << a << " to " << b << " is : " << integral <<"\n";
+  cout << "Function Sqrt integrated from " << a << " to " << b << " is : " << integral <<"\n";
+  cout << "**** **** **** ****" << endl;
+
 }
