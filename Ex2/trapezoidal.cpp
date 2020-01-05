@@ -20,6 +20,5 @@ double trap(double a, double b, pfn f, int n){
   {
     integral += (f(x[k-1]) +f(x[k]))*(h/2);
   }
-  //cout << integral;
   return integral;
 }

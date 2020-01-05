@@ -11,34 +11,51 @@ typedef double (*pfn) (double);
 
 double Square(double x){return x*x;};
 double Cube(double x){return x*x*x;};
-// cout << "the name of this function is: " << __func__ << endl;
 
 int main ()
 {
-  int n=0;
+  int n;
+  n = 100000;
   double integral=0.0;
-  double a=0.0;
-  double b=0.0;
 
-  cout << "Entrez la borne inf a : \n";
-  cin >> a;
-  cout << "Entrez la borne sup b :  \n";
-  cin >> b;
-  cout << "Entrez le nombre n : \n";
-  cin >> n;
+  cout << "**** **** **** ****" << endl;
+  Definite_integral iff = Definite_integral(0, 1, Square);
+  integral = iff.trapezoidal(n);
+  cout << "Function Square integrated from " << iff.lowbd() <<
+  " to " << iff.upbd() << " is : " << integral <<"\n";
+  iff.change_bounds(-1,1);
+  integral = iff.trapezoidal(n);
+  cout << "Function Square integrated from " << iff.lowbd() <<
+   " to " << iff.upbd() << " is : " << integral <<"\n";
+  iff.change_bounds(10,10);
+  integral = iff.trapezoidal(n);
+  cout << "Function Square integrated from " << iff.lowbd() <<
+   " to " << iff.upbd() << " is : " << integral <<"\n";
+  getchar();
 
-  Definite_integral iff = Definite_integral(a, b, Square);
   cout << "**** **** **** ****" << endl;
+  iff = Definite_integral(0,1,Cube);
   integral = iff.trapezoidal(n);
-  cout << "Function Square integrated from " << a << " to " << b << " is : " << integral <<"\n";
-  cout << "**** **** **** ****" << endl;
-  iff = Definite_integral(a, b, Cube);
+  cout << "Function Cube integrated from " << iff.lowbd() <<
+   " to " << iff.upbd() << " is : " << integral <<"\n";
+  iff.change_bounds(-1,1);
   integral = iff.trapezoidal(n);
-  cout << "Function Cube integrated from " << a << " to " << b << " is : " << integral <<"\n";
-  cout << "**** **** **** ****" << endl;
-  iff = Definite_integral(a, b, sqrt);
+  cout << "Function Cube integrated from " << iff.lowbd() <<
+   " to " << iff.upbd() << " is : " << integral <<"\n";
+  iff.change_bounds(10,10);
   integral = iff.trapezoidal(n);
-  cout << "Function Sqrt integrated from " << a << " to " << b << " is : " << integral <<"\n";
+  cout << "Function Cube integrated from " << iff.lowbd() <<
+   " to " << iff.upbd() << " is : " << integral <<"\n";
+  getchar();
+
   cout << "**** **** **** ****" << endl;
+  iff = Definite_integral(0, 1, sqrt);
+  integral = iff.trapezoidal(n);
+  cout << "Function Sqrt integrated from " << iff.lowbd() << " to " << iff.upbd() << " is : " << integral <<"\n";
+  iff.change_bounds(1,1);
+  integral = iff.trapezoidal(n);
+  cout << "Function Sqrt integrated from " << iff.lowbd() << " to " << iff.upbd() << " is : " << integral <<"\n";
+  cout << "**** **** **** ****" << endl;
+  getchar();
 
 }

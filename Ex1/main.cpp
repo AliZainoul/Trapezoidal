@@ -13,31 +13,31 @@ double cube(double x){return x*x*x;};
 
 int main ()
 {
-  int n=0;
-  double h=0.0;
-  double x_0=0.0;
   double integral=0.0;
-  double a=0.0;
-  double b=0.0;
 
-  cout << "Entrez un nombre d'intervalles n :  \n";
-  cin >> n;
-  cout << "Entrez la borne inf a : \n ";
-  cin >> a;
-  cout << "Entrez la borne sup b :  \n";
-  cin >> b;
+  // Trapezoidal Params
+  double a,b;
+  int n;
+  n = 100000;
 
-  h = (b-a)/n;
-  getchar();
+  a = 0;
+  b = 1;
   integral = trapezoidal(a, b, g, n);
-  cout << "Function 1+x integrated from " << a << " to " << b << " is : " << integral << "\n";
-
+  cout << "Function 1+x integrated from " <<
+  a << " to " << b << " is : " << integral << "\n";
   getchar();
+
+  a = 0;
+  b = 1;
   integral = trapezoidal(a, b, square, n);
-  cout << "Function square integrated from " << a << "to " << b << " is : " << integral<< "\n";
-
+  cout << "Function square integrated from " <<
+  a << " to " << b << " is : " << integral<< "\n";
   getchar();
+
+  a = -1;
+  b = 1;
   integral = trapezoidal(a, b, cube, n);
-  cout << "Function cube integrated from " << a << "to " << b << " is : " << integral<< "\n";
+  cout << "Function cube integrated from " <<
+  a << " to " << b << " is : " << integral<< "\n";
 
 }
