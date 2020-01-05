@@ -22,6 +22,6 @@ void Definite_integral::change_bounds(double a, double b)
 
 double Definite_integral::trapezoidal(int n) const {
   double integral=0.0; // Integral of a fct
-  integral = trap(lower,upper,integrand,n);
+  integral = ::trapezoidal(lower,upper,integrand,n);
   return integral;
 }
