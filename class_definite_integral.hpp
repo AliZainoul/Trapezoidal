@@ -20,9 +20,7 @@ public:
   double upbd() const; // accessor: get upper bound
   void change_bounds(double a, double b); //change integral bounds to a, b
   double trapezoidal(int n) const; // Compute integral using Trapezoidal
-  //friend double trapezoidal(double a, double b, pfn f, int n);
-  //double integral_polynome(MyFunction polynome,double* x,double* omega,int n);
-
+  
 };
 
 #endif

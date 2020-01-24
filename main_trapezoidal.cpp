@@ -1,7 +1,6 @@
 #include <iostream>
 #include <cmath>
 #include "trapezoidal.hpp"
-#include "Vector.hpp"
 #include "error.hpp"
 using namespace std;
 

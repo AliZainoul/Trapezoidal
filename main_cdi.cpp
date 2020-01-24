@@ -1,8 +1,6 @@
 #include <iostream>
 #include <cmath>
 using namespace std;
-
-#include "Vector.hpp"
 #include "error.hpp"
 #include "trapezoidal.hpp"
 #include "class_definite_integral.hpp"
