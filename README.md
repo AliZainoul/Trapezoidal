@@ -1,7 +1,15 @@
 # Trapezoidal Rule to compute integrals
 
 ## Ex1
-Compile with:
+Compile WITH 'Vector':
+
+g++ -c -std=c++11 error.cpp Vector.cpp trapezoidal.cpp main_trapezoidal.cpp
+
+g++ -o main error.o Vector.o trapezoidal.o main_trapezoidal.o
+
+./main
+
+Compile WITHOUT 'Vector':
 
 g++ -c -std=c++11 error.cpp trapezoidal.cpp main_trapezoidal.cpp
 

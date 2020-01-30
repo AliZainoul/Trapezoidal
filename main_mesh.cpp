@@ -3,6 +3,7 @@
 #include "error.hpp"
 #include "Vector.hpp"
 #include "trapezoidal.hpp"
+#include "mesh.hpp"
 using namespace std;
 
 typedef double (*pfn) (double);
@@ -13,31 +14,23 @@ double cube(double x){return x*x*x;};
 
 int main ()
 {
+  Mesh m(0,1,100000);
   double integral=0.0;
 
   // Trapezoidal Params
-  double a,b;
-  int n;
-  n = 100000;
-
-  a = 0;
-  b = 1;
-  integral = trapezoidal(a, b, g, n);
+  integral = m.trapezoidal(g);
   cout << "Function 1+x integrated from " <<
-  a << " to " << b << " is : " << integral << "\n";
+  m.lower() << " to " << m.upper() << " is : " << integral << "\n";
   getchar();
 
-  a = 0;
-  b = 1;
-  integral = trapezoidal(a, b, square, n);
+  integral = m.trapezoidal(square);
   cout << "Function square integrated from " <<
-  a << " to " << b << " is : " << integral<< "\n";
+  m.lower() << " to " << m.upper() << " is : " << integral<< "\n";
   getchar();
 
-  a = -1;
-  b = 1;
-  integral = trapezoidal(a, b, cube, n);
+  Mesh mm(-1,1,100000);
+  integral = mm.trapezoidal(cube);
   cout << "Function cube integrated from " <<
-  a << " to " << b << " is : " << integral<< "\n";
+  mm.lower() << " to " << mm.upper() << " is : " << integral<< "\n";
 
 }
